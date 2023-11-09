@@ -17,7 +17,7 @@
     function loadProducts() {
         const grid = document.getElementById('product-grid');
 
-        fetch('download')
+        fetch('download.json')
             .then(response => response.json())
             .then(products => {
                 products.forEach(product => {
