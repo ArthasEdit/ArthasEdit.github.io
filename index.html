@@ -6,11 +6,16 @@
     <title>Product Catalog</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 flex justify-center min-h-screen">
 
-<!-- Container for the product grid -->
-<div id="product-grid" class="grid grid-cols-4 gap-4">
-    <!-- Product items will be inserted here by JavaScript -->
+<!-- Fixed-width container -->
+<div class="w-full max-w-xs p-4">
+
+    <!-- Container for the product grid -->
+    <div id="product-grid" class="grid grid-cols-4 gap-4">
+        <!-- Product items will be inserted here by JavaScript -->
+    </div>
+
 </div>
 
 <script>
@@ -22,9 +27,9 @@
             .then(products => {
                 products.forEach(product => {
                     const productDiv = document.createElement('div');
-                    productDiv.className = 'max-w-xs mx-auto bg-white p-4 rounded-lg shadow-md text-center';
+                    productDiv.className = 'bg-white p-4 rounded-lg shadow-md text-center';
                     productDiv.innerHTML = `
-                        <img src="${product.image}" alt="${product.name}" class="mb-3 h-32 mx-auto w-32 object-contain"/>
+                        <img src="${product.image}" alt="${product.name}" class="mb-3 h-24 w-full object-cover"/>
                         <h5 class="text-lg font-bold">${product.name}</h5>
                         <p class="text-gray-600">${product.price} UZS</p>
                     `;
