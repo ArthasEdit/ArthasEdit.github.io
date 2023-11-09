@@ -9,10 +9,10 @@
 <body class="bg-gray-100 flex justify-center min-h-screen">
 
 <!-- Fixed-width container -->
-<div class="w-full max-w-xs p-3">
+<div class="w-full max-w-xs p-1">
 
     <!-- Container for the product grid -->
-    <div id="product-grid" class="grid grid-cols-3 gap-4">
+    <div id="product-grid" class="grid grid-cols-3 gap-3">
         <!-- Product items will be inserted here by JavaScript -->
     </div>
 
@@ -27,7 +27,7 @@
             .then(products => {
                 products.forEach(product => {
                     const productDiv = document.createElement('div');
-                    productDiv.className = 'bg-white p-4 rounded-lg shadow-md text-center';
+                    productDiv.className = 'bg-white p-2 rounded-lg shadow-md text-center';
                     productDiv.innerHTML = `
                         <img src="${product.image}" alt="${product.name}" class="mb-3 h-24 w-full object-cover"/>
                         <h5 class="text-lg font-bold">${product.name}</h5>
